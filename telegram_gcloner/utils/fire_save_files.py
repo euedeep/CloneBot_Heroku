@@ -87,7 +87,7 @@ class MySaveFileThread(threading.Thread):
             command_line += ['--config', gclone_config]
             command_line += [
                 '{}:{{{}}}'.format('gc', folder_id),
-                ('{}:{{{}}}/{}'.format('gc', dest_folder['folder_id'], destination_path))
+                ('{}:{{{}}}'.format('gc', dest_folder['folder_id']))
             ]
 
             logger.debug('command line: ' + str(command_line))
@@ -172,7 +172,7 @@ class MySaveFileThread(threading.Thread):
                         f'Speed：<code>{progress_speed_file}</code>\n' if is_fclone is True else '',
                         progress_speed,
                         progress_eta,
-                        '●' * progress_file_percentage_10 + '○' * (
+                        '█' * progress_file_percentage_10 + '░' * (
                                 progress_max_percentage_10 - progress_file_percentage_10) + ' ' * (
                                 10 - progress_max_percentage_10),
                         progress_file_percentage)
