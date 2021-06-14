@@ -233,7 +233,7 @@ class MySaveFileThread(threading.Thread):
 
             rc = process.poll()
             message_progress_heading, message_progress_content = message_progress.split('\n│', 1)
-            link_text = 'Unable to get link.'
+            link_text = 'Unable to get link..'
             try:
                 link = gd.get_folder_link(dest_folder['folder_id'], destination_path)
                 if link:
